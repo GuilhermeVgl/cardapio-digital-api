@@ -1,9 +1,11 @@
+<div style="margin-top: 15px; margin-bottom: 5px;">
+  <button type="button" class="btn btn-primary w-25 align-left">
+    <%= link_to "Back to products", products_path, class: "text-decoration-none text-white" %>
+  </button>
+</div>
+
 <h1>New product</h1>
 
 <%= render "form", product: @product %>
 
 <br>
-
-<div>
-  <%= link_to "Back to products", products_path %>
-</div>

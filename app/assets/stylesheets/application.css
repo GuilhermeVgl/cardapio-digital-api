@@ -13,3 +13,81 @@
  *= require_tree .
  *= require_self
  */
+
+ .btn {
+  text-decoration: none;
+  color: white;
+ }
+
+ .custom-button {
+  text-decoration: none;
+  color: white;
+ }
+
+  .custom-button.btn-primary:hover {
+    background-color: #286090; /* Cor de fundo quando o mouse está sobre o botão "Voltar" */
+    border-color: #286090;
+  }
+  
+  .custom-button.btn-dark:hover {
+    background-color: #343a40; /* Cor de fundo quando o mouse está sobre o botão "Editar" */
+    border-color: #343a40;
+  }
+  
+  .custom-button.btn-danger:hover {
+    background-color: #c9302c; /* Cor de fundo quando o mouse está sobre o botão "Excluir" */
+    border-color: #c9302c;
+  }
+
+  .custom-card {
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Adiciona uma transição suave ao estado normal */
+  }
+
+  .custom-card:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do card ao passar o mouse sobre ele */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave ao efeito hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil ao card */
+  }
+
+
+/*======================
+    404 page
+=======================*/
+
+.page_404{ 
+  padding:40px 0; 
+  background:#fff; 
+  font-family: 'Arvo', 
+  serif;
+}
+
+.page_404 img { 
+  width:100%;
+}
+
+.four_zero_four_bg{
+    background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    height: 400px;
+    background-position: center;
+ }
+
+ .four_zero_four_bg h1{
+    font-size:80px;
+ }
+ 
+  .four_zero_four_bg h3{
+	  font-size:80px;
+	}
+			 
+	.link_404 {			 
+	  color: #fff!important;
+    padding: 10px 20px;
+    background: #39ac31;
+    margin: 20px 0;
+    display: inline-block;
+  }
+
+	.contant_box_404 { 
+    margin-top:-50px;
+  }

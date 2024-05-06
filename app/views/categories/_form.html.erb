@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
+  <div style="margin-bottom: 15px">
+    <%= form.label "Nome da Categoria", style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Criar Categoria" %>
   </div>
 <% end %>

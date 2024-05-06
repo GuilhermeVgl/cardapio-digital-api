@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bem-vindo à minha aplicação</title>
+</head>
+<body>
+  <h1>Bem-vindo à minha aplicação!</h1>
+  <p><%= @mensagem_de_boas_vindas %></p>
+  
+  <!-- Exemplo de um link para a página de produtos -->
+  <div class="align-center justify-content-center">
+    <button type="button" class="btn w-25 btn-success custom-button">
+      <%= link_to "Categorias", categories_path, class: "text-decoration-none text-white custom-button" %>
+    </button>
+    <button type="button" class="btn w-25 btn-success custom-button">
+      <%= link_to "Produtos", products_path, class: "text-decoration-none text-white custom-button" %>
+    </button>
+  </div>
+  
+</body>
+</html>

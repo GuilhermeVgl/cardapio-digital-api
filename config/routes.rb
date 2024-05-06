@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :products
   resources :categories
-  resources :produtos
-  resources :categoria
+  resources :users
+
+  root to: 'application#index'
+
+  get '*path', to: 'application#not_found'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

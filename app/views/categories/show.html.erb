@@ -1,10 +1,17 @@
+<div style="margin-top: 15px; margin-bottom: 5px;">
+  <button type="button" class="btn btn-primary custom-button w-25 align-left text-decoration-none text-white">
+    <%= link_to "Voltar", categories_path%>
+  </button>
+</div>
+
 <p style="color: green"><%= notice %></p>
 
 <%= render @category %>
 
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
+<div style="display: flex;">
+  
+  <%= button_to "Editar", edit_category_path(@category), class: "btn btn-dark align-left custom-button" %>
 
-  <%= button_to "Destroy this category", @category, method: :delete %>
+  <%= button_to "Excluir", @category, method: :delete, class: "btn btn-danger align-left custom-button" %>
+  
 </div>

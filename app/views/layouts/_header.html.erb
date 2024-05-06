@@ -1,0 +1,14 @@
+<header style="background-color: #FFF">
+  <nav>
+    <ul>
+    <div>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Categorias", categories_path %></li>
+      <li><%= link_to "Produtos", products_path %></li>
+    </div>
+      <% if user_signed_in? %>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>
