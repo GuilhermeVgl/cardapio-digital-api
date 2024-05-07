@@ -91,3 +91,56 @@
 	.contant_box_404 { 
     margin-top:-50px;
   }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .main-content {
+    flex: 1;
+    padding-bottom: 100px; /* Ajuste conforme a altura do seu footer */
+  }
+
+  header {
+    flex-shrink: 0; /* Impede que o cabeçalho seja reduzido quando há pouco conteúdo */
+    background-color: #FFF;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px; /* Altura do footer */
+    background-color: #FFF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+
+  .login-body {
+    background-image: url("login-background.png"); /* ou o caminho correto da imagem */
+    background-size: cover; /* para cobrir toda a tela */
+    background-position: center; /* para centralizar a imagem */
+  }
+
+  .login-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 60%;
+    max-width: 400px;
+  }
+  

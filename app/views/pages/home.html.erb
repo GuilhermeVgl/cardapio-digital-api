@@ -4,6 +4,7 @@
   <title>Bem-vindo à minha aplicação</title>
 </head>
 <body>
+<%= render partial: 'layouts/header' %>
   <h1>Bem-vindo à minha aplicação!</h1>
   <p><%= @mensagem_de_boas_vindas %></p>
   
@@ -16,6 +17,6 @@
       <%= link_to "Produtos", products_path, class: "text-decoration-none text-white custom-button" %>
     </button>
   </div>
-  
+<%= render partial: 'layouts/footer' %>
 </body>
 </html>
