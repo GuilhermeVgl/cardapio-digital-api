@@ -1,6 +1,10 @@
 <body class="login-body">
   <div class="login-container">
+    <div class="image-form">
+      <%= image_tag 'div-image.png', class: "img" %>
+    </div>
     <div class="login-form">
+      <%= image_tag 'chef-hat_5109167.png', size: "50x25", class: "my-4" %>
       <h2>Sign up</h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -12,15 +16,20 @@
         </div>
 
         <div class="field my-4">
-          <%= f.label :password %>
+          <%= f.label :username %><br />
+          <%= f.text_field :username, autofocus: true %>
+        </div>
+
+        <div class="field my-4">
+          <%= f.label "Senha" %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <a>(No mínimo <%= @minimum_password_length %> caracteres)</a>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password" %>
         </div>
 
         <div class="field my-4">
-          <%= f.label :password_confirmation %><br />
+          <%= f.label "Confirmação de senha" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
 

@@ -1,12 +1,21 @@
 <body class="login-body">
   <div class="login-container">
+    <div class="image-form">
+      <%= image_tag 'div-image.png', class: "img" %>
+    </div>
     <div class="login-form">
+      <%= image_tag 'chef-hat_5109167.png', size: "50x25", class: "my-4" %>
       <h2>Log in</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field my-4">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field my-4">
+          <%= f.label :username %><br />
+          <%= f.text_field :username, autofocus: true %>
         </div>
 
         <div class="field my-4">

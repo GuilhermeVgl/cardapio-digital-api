@@ -122,7 +122,7 @@
   
 
   .login-body {
-    background-image: url("login-background.png"); /* ou o caminho correto da imagem */
+    background-color: #C93622; /* ou o caminho correto da imagem */
     background-size: cover; /* para cobrir toda a tela */
     background-position: center; /* para centralizar a imagem */
   }
@@ -130,17 +130,32 @@
   .login-container {
     display: flex;
     justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
     text-align: center;
     align-items: center;
     height: 100vh;
   }
   
   .login-form {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #F4EEDE;
     padding: 20px;
     width: 60%;
+    height: 70%;
     max-width: 400px;
+  }
+
+  .image-form {
+    background: #F4EEDE;
+    background-size: contain; /* para cobrir toda a tela */
+    background-position: center; /* para centralizar a imagem */
+    height: 70%;
+    width: 60%;
+    max-width: 400px;
+  }
+
+  .img {
+    width: 101%;
+    height: 100.1%;
   }
   
