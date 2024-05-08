@@ -1,6 +1,19 @@
+<style>
+  .field-with-error input[type="email"] {
+    border-color: red; /* Cor do realce em vermelho */
+  }
+  
+  .error-message {
+    color: red; /* Cor do texto da mensagem de erro */
+    font-size: 14px; /* Tamanho da fonte da mensagem de erro */
+    margin-top: 5px; /* Espaçamento superior da mensagem de erro */
+  }
+</style>
+
 <body class="login-body">
   <div class="login-container">
     <div class="login-form">
+      <%= image_tag 'chef-hat_5109167.png', size: "50x25", class: "my-4" %>
       <h2>Forgot your password?</h2>
 
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -12,11 +25,46 @@
         </div>
 
         <div class="actions  my-4">
-          <%= f.submit "Send me reset password instructions" %>
+          <input class="button-74" name="commit" type="submit" value="Send me reset password instructions" />
         </div>
       <% end %>
 
-      <%= render "devise/shared/links" %>
+      <%= button_to "Log In", new_session_path(resource_name), method: :get, class: "text-decoration-none button-23 my-4" %>
+      <%= button_to "Cadastre-se", new_registration_path(resource_name), method: :get, class: "text-decoration-none button-23 w-50" %>
     </div>
   </div>
 </body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector('.login-form form');
+
+    form.addEventListener('submit', function(event) {
+      const emailField = form.querySelector('#user_email'); // Certifique-se de ajustar o seletor conforme necessário
+      const existingErrorMessage = form.querySelector('.error-message');
+
+      if (existingErrorMessage) {
+        existingErrorMessage.remove(); // Remove a mensagem de erro existente, se houver
+        emailField.classList.remove('field-with-error'); // Remove a classe de erro do campo de email
+      }
+
+      if (emailField.value.trim() === '') {
+        event.preventDefault(); // Impede o envio do formulário
+
+        emailField.classList.add('field-with-error'); // Adiciona uma classe CSS para realçar o campo em vermelho
+
+        const errorMessage = document.createElement('div');
+        errorMessage.classList.add('error-message');
+        errorMessage.innerText = 'Por favor, insira um email válido.'; // Mensagem de erro personalizada
+        emailField.parentNode.appendChild(errorMessage); // Adiciona a mensagem de erro ao formulário
+
+        // Remove a mensagem de erro e a classe de erro após 5 segundos
+        setTimeout(function() {
+          errorMessage.remove();
+          emailField.classList.remove('field-with-error');
+        }, 5000);
+      }
+    });
+  });
+</script>
+
+

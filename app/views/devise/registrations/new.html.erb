@@ -34,11 +34,46 @@
         </div>
 
         <div class="actions my-4">
-          <%= f.submit "Sign up" %>
+          <input class="button-74" name="commit" type="submit" value="Cadastrar-se" data-disable-with="Sign up" />
         </div>
       <% end %>
 
-      <%= render "devise/shared/links" %>
-    </div>
+      <%= button_to "Log In", new_session_path(resource_name), method: :get, class: "text-decoration-none button-23" %>
+  
   </div>
 </body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector('.login-form form');
+
+    form.addEventListener('submit', function(event) {
+      const emailField = form.querySelector('#user_email');
+      const userField = form.querySelector('#user_username');
+      const passwordField = form.querySelector('#user_password');
+      const existingErrorMessage = form.querySelector('.error-message');
+
+      if (existingErrorMessage) {
+        existingErrorMessage.remove(); // Remove a mensagem de erro existente, se houver
+        emailField.classList.remove('field-with-error'); // Remove a classe de erro do campo de email
+      }
+
+      if (emailField.value.trim() === '') {
+        event.preventDefault(); // Impede o envio do formulário
+
+        emailField.classList.add('field-with-error'); // Adiciona uma classe CSS para realçar o campo em vermelho
+
+        const errorMessage = document.createElement('div');
+        errorMessage.classList.add('error-message');
+        errorMessage.innerText = 'Por favor, insira um email válido.'; // Mensagem de erro personalizada
+        emailField.parentNode.appendChild(errorMessage); // Adiciona a mensagem de erro ao formulário
+
+        // Remove a mensagem de erro e a classe de erro após 5 segundos
+        setTimeout(function() {
+          errorMessage.remove();
+          emailField.classList.remove('field-with-error');
+        }, 5000);
+      }
+    });
+  });
+</script>
