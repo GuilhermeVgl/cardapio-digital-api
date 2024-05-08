@@ -1,23 +1,41 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
  .btn {
   text-decoration: none;
   color: white;
  }
+ 
+ /* CSS */
+ .button-74 {
+  transition: transform 0.3s ease; /* Adiciona uma transição suave ao estado normal */
+  background-color: #fbeee0 !important;
+  border: 2px solid #422800 !important;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800 !important;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+ }
+ 
+ .button-74:hover {
+   background-color: #fff;
+   transform: scale(1.05); /* Aumenta ligeiramente o tamanho do card ao passar o mouse sobre ele */
+   transition: transform 0.3s ease; /* Adiciona uma transição suave ao efeito hover */
+ }
+ 
+ .button-74:active {
+   box-shadow: #422800 2px 2px 0 0;
+   transform: translate(2px, 2px);
+ }
+ 
+ @media (min-width: 768px) {
+   .button-74 {
+     min-width: 120px;
+     padding: 0 25px;
+   }
+ }
+ 
 
  .custom-button {
   text-decoration: none;
@@ -122,7 +140,7 @@
   
 
   .login-body {
-    background-image: url("login-background.png"); /* ou o caminho correto da imagem */
+    background-color: #C93622; /* ou o caminho correto da imagem */
     background-size: cover; /* para cobrir toda a tela */
     background-position: center; /* para centralizar a imagem */
   }
@@ -130,17 +148,57 @@
   .login-container {
     display: flex;
     justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
     text-align: center;
     align-items: center;
     height: 100vh;
   }
+
+  #title {
+    text-align: start !important;
+    align-items: start !important;
+    justify-content: start !important;
+  }
   
   .login-form {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #F4EEDE;
     padding: 20px;
+    width: 60%;
+    height: 70%;
+    max-width: 400px;
+  }
+
+  .image-form {
+    background: #F4EEDE;
+    background-size: contain; /* para cobrir toda a tela */
+    background-position: center; /* para centralizar a imagem */
+    height: 70%;
     width: 60%;
     max-width: 400px;
   }
-  
+
+  .img {
+    width: 101%;
+    height: 100%;
+  }
+
+/* CSS */
+.button-23 {
+  background-color: #F4EEDE;
+  border: 2px solid #422800;
+  font-weight: 600;
+  border-radius: 30px;
+  box-sizing: border-box;
+  transition: .3s ease;
+  width: 30%;
+  color: #422800;
+}
+
+.button-23:hover {
+  transform: scale(1.05); /* Aumenta ligeiramente o tamanho do card ao passar o mouse sobre ele */
+  transition: transform 0.3s ease; /* Adiciona uma transição suave ao efeito hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil ao card */
+  border: 2px solid #422800 !important;
+  background-color: #F4EEDE !important;
+}
