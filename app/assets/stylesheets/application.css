@@ -165,7 +165,7 @@
     background-color: #F4EEDE;
     padding: 20px;
     width: 60%;
-    height: 70%;
+    height: 80%;
     max-width: 400px;
   }
 
@@ -173,7 +173,7 @@
     background: #F4EEDE;
     background-size: contain; /* para cobrir toda a tela */
     background-position: center; /* para centralizar a imagem */
-    height: 70%;
+    height: 80%;
     width: 60%;
     max-width: 400px;
   }
@@ -201,4 +201,14 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil ao card */
   border: 2px solid #422800 !important;
   background-color: #F4EEDE !important;
+}
+
+.login-container-2 {
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  align-items: center;
+  height: 100%;
 }

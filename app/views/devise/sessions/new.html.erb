@@ -1,40 +1,40 @@
 <body class="login-body">
   <div class="login-container">
-    <div class="image-form">
-      <%= image_tag 'div-image.png', class: "img" %>
-    </div>
-    <div class="login-form">
-      <%= image_tag 'chef-hat_5109167.png', size: "50x25", class: "my-4" %>
-      <h2>Log in</h2>
+      <div class="image-form">
+        <%= image_tag 'div-image.png', class: "img" %>
+      </div>
+      <div class="login-form">
+        <%= image_tag 'chef-hat_5109167.png', size: "50x25", class: "" %>
+        <h2>Log in</h2>
 
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field my-4">
-          <label id="title" for="email">Email</label><br />
-            <div class="input-wrapper">
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "styled-input" %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field ">
+            <label id="title" for="email">Email</label><br />
+              <div class="input-wrapper">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "styled-input" %>
+              </div>
+          </div>
+
+          <div class="field ">
+            <label id="title" for="password">Senha</label><br />
+            <%= f.password_field :password, autocomplete: "current-password" %>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="field ">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
             </div>
-        </div>
+          <% end %>
 
-        <div class="field my-4">
-          <label id="title" for="password">Senha</label><br />
-          <%= f.password_field :password, autocomplete: "current-password" %>
-        </div>
-
-        <% if devise_mapping.rememberable? %>
-          <div class="field my-4">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+          <div class="actions  mb-5">
+            <input class="button-74" name="commit" type="submit" value="Log in" data-disable-with="Log in" />
           </div>
         <% end %>
+        
+        <%= button_to "Cadastre-se", new_registration_path(resource_name), method: :get, class: "text-decoration-none button-23 w-50" %>
+        <%= link_to "Esqueceu sua senha?", new_password_path(resource_name), class: "text-decoration-none text-dark" %><br />
 
-        <div class="actions my-4 mb-5">
-          <input class="button-74" name="commit" type="submit" value="Log in" data-disable-with="Log in" />
-        </div>
-      <% end %>
-      
-      <%= button_to "Cadastre-se", new_registration_path(resource_name), method: :get, class: "text-decoration-none button-23 mt-5 mb-2 w-50" %>
-      <%= link_to "Esqueceu sua senha?", new_password_path(resource_name), class: "text-decoration-none mt-4 text-dark" %><br />
-
-    </div>
+      </div>
   </div>
 </body>
