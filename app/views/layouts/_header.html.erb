@@ -1,14 +1,39 @@
-<header style="background-color: #FFF">
-  <nav>
-    <ul>
-    <div>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Categorias", categories_path %></li>
-      <li><%= link_to "Produtos", products_path %></li>
+<header style="margin: 0; height: auto; width: auto;">
+  <div class="px-3 py-2 bg-dark text-white">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <img src="/images/tray.svg" width="64" height="64" style="margin-right: 20px;">
+      </div>
+      <div class="d-flex flex-wrap align-items-center">
+        <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+          <li>
+            <%= link_to root_path, class: "nav-link text-white" do %>
+              Home
+            <% end %>
+          </li>
+          <li>
+            <%= link_to categories_path, class: "nav-link text-white" do %>
+              Categorias
+            <% end %>
+          </li>
+          <li>
+              <%= link_to products_path, class: "nav-link text-white" do %>
+              Produtos
+            <% end %>
+          </li>
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link text-white" do %>
+                Sair
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
-      <% if user_signed_in? %>
-        <li><%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %></li>
-      <% end %>
-    </ul>
-  </nav>
+  </div>
 </header>

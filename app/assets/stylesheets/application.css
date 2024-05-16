@@ -122,11 +122,6 @@
     padding-bottom: 100px; /* Ajuste conforme a altura do seu footer */
   }
 
-  header {
-    flex-shrink: 0; /* Impede que o cabeçalho seja reduzido quando há pouco conteúdo */
-    background-color: #FFF;
-  }
-
   footer {
     position: fixed;
     bottom: 0;
