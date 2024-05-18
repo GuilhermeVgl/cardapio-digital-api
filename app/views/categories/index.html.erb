@@ -1,11 +1,16 @@
 <div class="justify-content-center align-center">
   <p style="color: green"><%= notice %></p>
-    <h1>Categorias</h1>
+  <h1>Categorias</h1>
 
   <div class="row" id="categories" style="display: flex; text-align: center;">
     <% @categories.each do |category| %>
       <div class="col-md-4 mb-3">
         <div class="card custom-card" onclick="location.href='<%= category_path(category) %>';">
+          <% if category.image_url.present? %>
+            <%= image_tag category.image_url %>
+          <% else %>
+            <p>Imagem não disponível</p>
+          <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= category.title %></h5>
             <!-- Adicione mais informações da categoria conforme necessário -->

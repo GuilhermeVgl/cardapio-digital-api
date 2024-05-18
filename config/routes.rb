@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   resources :categories
   resources :users
 
+  resources :addresses, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :carts, only: [:show] do
+    resources :cart_items, only: [:create, :update, :destroy]
+  end
+  resources :orders, only: [:index, :show, :new, :create]
+
   root to: 'application#index'
 
   get '*path', to: 'application#not_found'

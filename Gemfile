@@ -28,6 +28,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem 'font-awesome-rails'
+
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'sass-rails', '~> 6.0.0'

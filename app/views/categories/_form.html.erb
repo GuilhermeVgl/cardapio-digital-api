@@ -16,7 +16,12 @@
     <%= form.text_field :title %>
   </div>
 
+  <div style="margin-bottom: 15px" class="field">
+    <%= form.label "URL da Imagem", style: "display: block" %>
+    <%= form.text_field :image_url %>
+  </div>
+
   <div>
-    <%= form.submit "Criar Categoria" %>
+    <%= form.submit "Criar Categoria", class: "btn btn-success text-white w-25" %>
   </div>
 <% end %>

@@ -2,13 +2,23 @@
 
 <h1>Produtos</h1>
 
-<div id="products">
+<div class="row" id="products" style="display: flex; text-align: center;">
   <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
+    <div class="col-md-4 mb-3">
+      <div class="card custom-card" onclick="location.href='<%= product_path(product) %>';">
+        <% if product.images.present? %>
+          <%= link_to image_tag product.images, class: "card-img-top", style: "height: 200px; object-fit: cover;" %>
+        <% else %>
+          <p>Imagem não disponível</p>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= product.name %></h5>
+          <p class="card-text"><%= product.description %></p>
+          <!-- Adicione mais informações do produto conforme necessário -->
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New product", new_product_path %>
+<%= link_to "Novo produto", new_product_path, class: "btn btn-success text-white w-25" %>

@@ -1,31 +1,103 @@
+<style>
+
+.header {
+  background-color: #1f2029 !important;
+}
+
+li {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #c4c3ca;
+}
+
+li {
+  display: inline-block;
+  position: relative;
+}
+
+li::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffeba7;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+li:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1f2029;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #c4c3ca;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+</style>
 <header style="margin: 0; height: auto; width: auto;">
-  <div class="px-3 py-2 bg-dark text-white">
+  <div class="px-3 py-2 text-white header">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="d-flex align-items-center">
-        <img src="/images/tray.svg" width="64" height="64" style="margin-right: 20px;">
+        <img src="/images/icons8-hamburger-96.png" width="64" height="64" style="margin-right: 20px;">
+        <h1>QuickEats</h1>
       </div>
       <div class="d-flex flex-wrap align-items-center">
         <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
           <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
         </a>
 
-        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0">
           <li>
             <%= link_to root_path, class: "nav-link text-white" do %>
               Home
             <% end %>
           </li>
-          <li>
-            <%= link_to categories_path, class: "nav-link text-white" do %>
-              Categorias
-            <% end %>
-          </li>
-          <li>
-              <%= link_to products_path, class: "nav-link text-white" do %>
-              Produtos
-            <% end %>
-          </li>
           <% if user_signed_in? %>
+            <li class="dropdown">
+              <a href="#" class="nav-link text-white dropbtn">Cadastrar</a>
+              <div class="dropdown-content">
+                <%= link_to products_path, class: "nav-link text-white" do %>
+                  Produtos
+                <% end %>
+                <%= link_to categories_path, class: "nav-link text-white" do %>
+                  Categorias
+                <% end %>
+              </div>
+            </li>
             <li>
               <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link text-white" do %>
                 Sair

@@ -1,9 +1,11 @@
-<div style="margin-top: 15px; margin-bottom: 5px;">
-    <%= button_to "Voltar", root_path, class: "btn btn-primary custom-button w-25 align-left text-decoration-none text-white" %>
+<div>
+    <div style="margin-top: 15px; margin-bottom: 5px;">
+        <%= link_to "Voltar", categories_path, class: "btn btn-primary custom-button w-25 align-left text-decoration-none text-white" %>
+    </div>
+
+    <h1>Nova categoria</h1>
+
+    <br>
+
+    <%= render "form", category: @category %>
 </div>
-
-<h1>Nova categoria</h1>
-
-<br>
-
-<%= render "form", category: @category %>

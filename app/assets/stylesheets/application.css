@@ -126,7 +126,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 100px; /* Altura do footer */
+    height: auto; /* Altura do footer */
     background-color: #FFF;
     color: white;
     text-align: center;
@@ -177,33 +177,3 @@
     width: 101%;
     height: 100%;
   }
-
-/* CSS */
-.button-23 {
-  background-color: #F4EEDE;
-  border: 2px solid #422800;
-  font-weight: 600;
-  border-radius: 30px;
-  box-sizing: border-box;
-  transition: .3s ease;
-  width: 30%;
-  color: #422800;
-}
-
-.button-23:hover {
-  transform: scale(1.05); /* Aumenta ligeiramente o tamanho do card ao passar o mouse sobre ele */
-  transition: transform 0.3s ease; /* Adiciona uma transição suave ao efeito hover */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil ao card */
-  border: 2px solid #422800 !important;
-  background-color: #F4EEDE !important;
-}
-
-.login-container-2 {
-  display: flex;
-  justify-content: center;
-  border-radius: 20px;
-  box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  align-items: center;
-  height: 100%;
-}

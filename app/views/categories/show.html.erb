@@ -1,17 +1,21 @@
-<div style="margin-top: 15px; margin-bottom: 5px;">
-  <button type="button" class="btn btn-primary custom-button w-25 align-left text-decoration-none text-white">
-    <%= link_to "Voltar", categories_path%>
+<div style="margin-top: 15px; margin-bottom: 5px;" class="justify-content-center">
+  <div>
+    <%= link_to "Voltar", categories_path, class: "btn btn-primary custom-button w-25 align-left text-decoration-none text-white" %>
   </button>
+  </div>
+
+<div class="card my-4 w-75">
+  <div class="card-header bg-dark text-white py-2">
+    Item
+  </div>
+  <div class="card-body w-100">
+    <h3 class="card-title w-100 mb-4 mt-2"><%= @category.title %></h3>
+    <div class="m-2 w-100">
+      <%= link_to "Editar", edit_category_path(@category), class: " btn btn-dark mb-2 text-white mx-2 w-25" %>
+      <%= button_to "Excluir", @category, method: :delete, data: { confirm: "Tem certeza?" }, class: "btn btn-danger mb-2 mx-2 w-25 text-white" %>
+    </div>
+  </div>
 </div>
 
-<p style="color: green"><%= notice %></p>
-
-<%= render @category %>
-
-<div style="display: flex;">
-  
-  <%= button_to "Editar", edit_category_path(@category), class: "btn btn-dark align-left custom-button" %>
-
-  <%= button_to "Excluir", @category, method: :delete, class: "btn btn-danger align-left custom-button" %>
   
 </div>

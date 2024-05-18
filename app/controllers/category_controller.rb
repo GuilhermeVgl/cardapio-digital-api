@@ -25,10 +25,10 @@ class CategoryController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to category_url(@category), notice: "category was successfully created." }
+        format.html { redirect_to @category, notice: 'Categoria criada com sucesso.' }
         format.json { render :show, status: :created, location: @category }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new }
         format.json { render json: @category.errors, status: :unprocessable_entity }
       end
     end
@@ -56,8 +56,7 @@ class CategoryController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  private
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = category.find(params[:id])
@@ -65,6 +64,6 @@ class CategoryController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:title)
+      params.require(:category).permit(:title, :image_url)
     end
 end
